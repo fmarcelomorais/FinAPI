@@ -1,5 +1,4 @@
 const express = require('express');
-const cursos = require('./db/banco');
 const app = express();
 
 const rotaClientes = require('./router/clienteRota');
@@ -10,7 +9,5 @@ app.use(express.json());
 
 app.use('/clientes', rotaClientes)
 app.use('/contas', rotaContas)
-
-
 
 module.exports = app;
