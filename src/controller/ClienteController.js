@@ -5,7 +5,7 @@ class ClienteController {
 
     //GET
     static clientes( req, res){        
-        return res.json({clientes: banco.clientes});
+        return res.status(200).json({clientes: banco.clientes});
     }
     //GET ONE
     static cliente(req, res){

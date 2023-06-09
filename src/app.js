@@ -9,14 +9,12 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(
     cors({
-        //source: '/:path*',
         origin: '*',
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['Content-Type', 'Authorization', 'token', 'access-control-allow-origin'],
         credentials: true,
         optionsSuccessStatus: 200,
-        maxAge: 86400,
-        token: '*'
+        maxAge: 86400
     })
 );
 app.use('/clientes', rotaClientes)

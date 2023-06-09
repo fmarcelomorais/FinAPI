@@ -10,12 +10,15 @@ async function requisicao(){
     const data = await requisicao.json();
     const dados = await data;
     const clientes = await dados.clientes;
-    if(!clientes) {
-        alert("Nenhum cliente encontrado");
+    const tbody = document.querySelector('.clientes');
+
+     if(!clientes || clientes.length === 0) {
+        tbody.innerHTML = "<h1>Clientes não encontrado</h1>";
         return 
-    }
+    } 
+
     clientes.forEach(cliente => {
-        const tbody = document.querySelector('.clientes');
+      //  const tbody = document.querySelector('.clientes');
 
         let dados =`
         <tr class="">
@@ -28,6 +31,6 @@ async function requisicao(){
     
 }
 
-const btn = document.getElementById('btn')
+
 window.addEventListener('load', requisicao)
 
